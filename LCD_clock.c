@@ -1,7 +1,6 @@
 /* 
  * File:   LCD_clock.c
  * Author: Shufen Situ
- *
  * Created on November 11, 2020, 3:06 PM
  */
 
@@ -36,7 +35,7 @@ void init() {
 FILE lcd_str = FDEV_SETUP_STREAM(lcd_putchar, NULL, _FDEV_SETUP_WRITE);
 
 /*The following function will be called when the reset button is pressed. The lcd clock is now in 
- reset mode. When the reset button is pressed again, the lcd clcok will exit reset mode.*/
+ reset mode. The lcd clcok will exit reset mode if the reset button is pressed again.*/
 void check_button() {
     while (1) {
         /*Reset hours*/
@@ -93,7 +92,7 @@ void check_button() {
     }
 }
 
-/*The following function update time by incrementing the values of seconds, minutes, and hours*/
+/*The following function updates time by incrementing the values of seconds, minutes, and hours*/
 void set_current_time() {
     ss++;
     if ((ss > 59) && (mm < 59)) {
