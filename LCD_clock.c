@@ -114,14 +114,14 @@ void set_current_time() {
 /* The following function initializes the LCD*/
 int main() {
     init();
-    DDRD &= ~(1 << hour_button); /*Set pin direction to input*/
-    DDRD &= ~(1 << minute_button); /*Set pin direction to input*/
-    DDRD &= ~(1 << second_button); /*Set pin direction to input*/
-    DDRD &= ~(1 << reset_button); /*Set pin direction to input*/
-    PORTD |= (1 << hour_button); /*default input is high*/
-    PORTD |= (1 << minute_button); /*default input is high*/
-    PORTD |= (1 << second_button); /*default input is high*/
-    PORTD |= (1 << reset_button); /*default input is high*/
+    DDRD &= ~(1 << hour_button); 
+    DDRD &= ~(1 << minute_button); 
+    DDRD &= ~(1 << second_button); 
+    DDRD &= ~(1 << reset_button); 
+    PORTD |= (1 << hour_button);
+    PORTD |= (1 << minute_button); 
+    PORTD |= (1 << second_button);
+    PORTD |= (1 << reset_button); 
     lcd_init();
     fprintf(&lcd_str, "    %02d:%02d:%02d    \x1b\xc0  Button Status ", hh, mm, ss);
     //The while loop checks if the reset button is pressed
